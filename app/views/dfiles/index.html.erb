@@ -1,0 +1,35 @@
+<h1>Listing dfiles</h1>
+
+<table>
+  <tr>
+    <th>U</th>
+    <th>User</th>
+    <th>Place</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Location</th>
+    <th>Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dfiles.each do |dfile| %>
+  <tr>
+    <td><%= dfile.u_id %></td>
+    <td><%= dfile.user_id %></td>
+    <td><%= dfile.place_id %></td>
+    <td><%= dfile.name %></td>
+    <td><%= dfile.description %></td>
+    <td><%= dfile.location %></td>
+    <td><%= dfile.type %></td>
+    <td><%= link_to 'Show', dfile %></td>
+    <td><%= link_to 'Edit', edit_dfile_path(dfile) %></td>
+    <td><%= link_to 'Destroy', dfile, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dfile', new_dfile_path %>

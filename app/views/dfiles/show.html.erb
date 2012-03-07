@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>U:</b>
+  <%= @dfile.u_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @dfile.user_id %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @dfile.place_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @dfile.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @dfile.description %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @dfile.location %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @dfile.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_dfile_path(@dfile) %> |
+<%= link_to 'Back', dfiles_path %>
