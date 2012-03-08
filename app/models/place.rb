@@ -1,3 +1,3 @@
 class Place < ActiveRecord::Base
-	has_many :files
+	has_many :dfiles
 end

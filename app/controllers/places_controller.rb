@@ -91,7 +91,7 @@ class PlacesController < ApplicationController
 			@place.save!
 		end
 		respond_to do |format|
-			format.json { render json: @place }
+			format.json { render json: @place, :include => [:dfiles] }
 		end
 	end
 
