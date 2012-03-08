@@ -80,4 +80,19 @@ class PlacesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+	def find_or_create
+		@place = Place.find_or_create_by_u_id(params[:id])
+		if not @place.name
+			@place.name = params[:name]
+			@place.latitude = params[:latitude]
+			@place.longitude = params[:longitude]
+			@place.category_u_id = params[:category]
+		end
+		respond_to do |format|
+			format.json { render json: @place }
+		end
+	end
+
+
 end
