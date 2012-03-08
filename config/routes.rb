@@ -12,6 +12,7 @@ Ibeam::Application.routes.draw do
 	match '/' => "display#index"
 
 	match 'users/find_or_create/:id' => 'users#find_or_create'
+	match 'places/find_or_create/:id' => 'places#find_or_create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

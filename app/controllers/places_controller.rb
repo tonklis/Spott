@@ -88,6 +88,7 @@ class PlacesController < ApplicationController
 			@place.latitude = params[:latitude]
 			@place.longitude = params[:longitude]
 			@place.category_u_id = params[:category]
+			@place.save!
 		end
 		respond_to do |format|
 			format.json { render json: @place }
