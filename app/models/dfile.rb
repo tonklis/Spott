@@ -7,7 +7,7 @@ class Dfile < ActiveRecord::Base
 		dfile = Dfile.new
     dfile.name = params['name']
 		dfile.user_id = User.find_by_u_id(params['u_id']).id
-		dfile.place_id = Place.find_by_u_id(params['place_u_id']).id;
+		dfile.place_id = Place.find_by_u_id(params['place_u_id']).id
 		
 		file = params['userfile']
     directory = "public/data"
