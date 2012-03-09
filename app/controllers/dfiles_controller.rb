@@ -80,4 +80,13 @@ class DfilesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+	def receive
+		@dfile = Dfile.save_file(params)
+
+		respond_to do |format|
+			format.json { head :ok }
+		end
+	end
+
 end
