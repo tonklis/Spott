@@ -15,7 +15,7 @@ Ibeam::Application.routes.draw do
 
 	match 'places/find_or_create/:id' => 'places#find_or_create'
 
-	match 'dfiles/receive' => 'dfiles#receive'
+	match 'dfiles/receive/:id' => 'dfiles#receive'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
