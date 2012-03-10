@@ -82,7 +82,7 @@ class UsersController < ApplicationController
   end
 
 	def find_or_create
-		@user = User.find_or_create_by_u_id(params[:id]){ |u| u.email => params[:id] }
+		@user = User.encuentra_o_crea(params[:id])
 		respond_to do |format|
 			format.json { render json: @user }
 		end
