@@ -85,7 +85,7 @@ class DfilesController < ApplicationController
 		@dfile = Dfile.save_file(params)
 
 		respond_to do |format|
-			format.json { head :ok }
+			format.json { render json: @dfile }
 		end
 	end
 
