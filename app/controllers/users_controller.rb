@@ -82,11 +82,7 @@ class UsersController < ApplicationController
   end
 
 	def find_or_create
-		@user = User.find_or_create_by_u_id(params[:id])
-		if @user.email == nil OR @user.email = ""
-			@user.email = params[:id]
-			@user.save!
-		end
+		@user = User.find_or_create_by_u_id(params[:id]){ |u| u.email => params[:id] }
 		respond_to do |format|
 			format.json { render json: @user }
 		end
