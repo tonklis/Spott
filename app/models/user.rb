@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 		usuario
 	end
 
-	def self.encuentra_o_crea(params_id){
+	def self.encuentra_o_crea(params_id)
 		user = User.find_by_u_id(params_id)
 		if not user
 				user = User.new
@@ -30,6 +30,6 @@ class User < ActiveRecord::Base
  				user.save!
 		end
 		user	
-	}
+	end
 
 end
