@@ -83,7 +83,7 @@ class UsersController < ApplicationController
 
 	def find_or_create
 		@user = User.find_or_create_by_u_id(params[:id])
-		if not @user.email
+		if @user.email == nil OR @user.email = ""
 			@user.email = params[:id]
 			@user.save!
 		end
