@@ -17,7 +17,7 @@ class Dfile < ActiveRecord::Base
     File.open(dfile.location, "wb") { |f| f.write(file.read) }
 		
 		dfile.save!
-
+		return dfile
   end
 	
 end
