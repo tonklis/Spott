@@ -9,7 +9,7 @@ Ibeam::Application.routes.draw do
 
   resources :places
 
-	match '/' => "display#index"
+	# match '/' => "display#index"
 
 	match 'users/find_or_create/:id' => 'users#find_or_create'
 
