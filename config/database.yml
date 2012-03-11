@@ -28,5 +28,5 @@ production:
   database: spott_prod
   pool: 5
   username: root
-	password: SpottApp2012
-	host: localhost
+  password: SpottApp2012
+  host: localhost
