@@ -10,9 +10,11 @@ class Dfile < ActiveRecord::Base
 		dfile.place_id = Place.find_by_id(params['place_id']).id
 		
 		file = params['userfile']
+		dfile.description = params['description']
     dir_name = "public/data/#{dfile.place_id}"
 		if not FileTest::directory?(dir_name)
-			Dir::mkdir(dir_name, 755)
+			#arreglar este bug, no crea correctamente directorios
+			Dir::mkdir(dir_name, 777)
 		end
 
     # create the file path
