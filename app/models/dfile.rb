@@ -9,7 +9,7 @@ class Dfile < ActiveRecord::Base
 		dfile.place_id = Place.find_by_id(params['place_id']).id
 		
 		file = params['userfile']
-    dfile.name = params['name'] + file.original_name
+    dfile.name = params['name'] + file.original_filename
 		dfile.description = params['description']
     dir_name = "public/data/#{dfile.place_id}"
 		if not FileTest::directory?(dir_name)
