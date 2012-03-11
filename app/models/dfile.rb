@@ -10,9 +10,13 @@ class Dfile < ActiveRecord::Base
 		dfile.place_id = Place.find_by_id(params['place_id']).id
 		
 		file = params['userfile']
-    directory = "public/data"
+    dir_name = "public/data/#{dfile.place_id}"
+		if not FileTest::directory?(dir_name)
+			Dir::mkdir(directory_name, 755)
+		end
+
     # create the file path
-    dfile.location = File.join(directory, dfile.name)
+    dfile.location = File.join(dir_name, dfile.name)
     # write the file
     File.open(dfile.location, "wb") { |f| f.write(file.read) }
 		
