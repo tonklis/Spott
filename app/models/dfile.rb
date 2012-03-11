@@ -12,7 +12,7 @@ class Dfile < ActiveRecord::Base
 		file = params['userfile']
     dir_name = "public/data/#{dfile.place_id}"
 		if not FileTest::directory?(dir_name)
-			Dir::mkdir(directory_name, 755)
+			Dir::mkdir(dir_name, 755)
 		end
 
     # create the file path
